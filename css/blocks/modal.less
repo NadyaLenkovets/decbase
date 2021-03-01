@@ -1,0 +1,90 @@
+// main: ../style.less
+
+.modal {
+   display: none;
+   width: 100%;
+   height: 100%;
+
+   background-color: rgba(0, 0, 0, 0.8);
+
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1000;
+   overflow-y: auto;
+
+   &.show {
+      display: flex;
+   }
+}
+
+.modal__dialog {
+   width: 100%;
+   max-width: 900px;
+   margin: auto;
+   background-color: @white;
+   position: relative;
+
+
+
+   transform: translateY(-120%);
+   transition: transform 0.6s ease;
+}
+
+.modal__close {
+   position: absolute;
+   top: 15px;
+   right: 15px;
+   z-index: 1001;
+}
+
+.modal__close-icon {
+   display: block;
+   width: 30px;
+   height: 30px;
+   background-color: @emerald;
+
+   transition: 0.3s ease;
+
+   &:hover {
+      transform: scale(1.2);
+   }
+}
+
+.modal__photo {
+   text-align: center;
+   background-color: @emerald;
+   padding: 50px 50px 0;
+}
+
+.modal__content {
+   margin: 30px 0 0 0;
+   padding: 0 50px 50px;
+}
+
+.modal__subtitle {
+
+   & span {
+      margin: 0 0 0 10px;
+   }
+}
+
+.modal__text {
+   padding: 20px 0 0 0;
+}
+
+.modal3__inner {
+   text-align: center;
+   padding: 50px;
+   background-color: @emerald;
+}
+
+.modal3__title,
+.modal3__text {
+   color: @white;
+}
+
+.modal3__btn {
+   display: block;
+   margin: 40px auto 50px;
+}

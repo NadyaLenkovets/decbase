@@ -1,0 +1,249 @@
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+
+*,
+*:before,
+*:after {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+:focus,
+:active {
+   outline: none;
+}
+
+a:focus,
+a:active {
+   outline: none
+}
+
+nav,
+footer,
+header,
+aside {
+   display: block;
+}
+
+html,
+body {
+   height: 100%;
+   width: 100%;
+   font-size: 100%;
+   line-height: 1;
+   font-size: 14px;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+
+}
+
+input,
+button,
+textarea {
+   font-family: inherit;
+}
+
+input::-ms-clear {
+   display: none;
+}
+
+button {
+   cursor: pointer;
+}
+
+button::moz-focus-inner {
+   padding: 0:border:0;
+}
+
+a,
+a:visited {
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: none;
+}
+
+ul li {
+   list-style: none;
+}
+
+img {
+   vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-size: inherit;
+   font-weight: 400;
+}
+
+/* Vendor  */
+@import "vendor/slick";
+
+
+/* Blocks  */
+
+@import "vars";
+@import "blocks/buttons";
+@import "blocks/container";
+@import "blocks/header";
+@import "blocks/intro";
+@import "blocks/services";
+@import "blocks/about";
+@import "blocks/works";
+@import "blocks/testimonials";
+@import "blocks/news";
+@import "blocks/signup";
+@import "blocks/footer";
+@import "blocks/copyright";
+@import "blocks/modal";
+
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: "Open Sans", sans-serif;
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 30px;
+   color: @main-color;
+
+   &.no-scroll {
+      overflow: hidden;
+   }
+}
+
+.subtitle {
+   font-size: 16px;
+   font-weight: 600;
+   text-transform: uppercase;
+}
+
+.main__title {
+   font-size: 72px;
+   line-height: 78px;
+   font-family: "Poppins";
+   font-weight: 600;
+   color: @black;
+
+   @media @tablet {
+      font-size: 55px;
+      line-height: 65px;
+   }
+
+   @media @mobile {
+      font-size: 45px;
+      line-height: 53px;
+   }
+}
+
+.title {
+   font-family: "Poppins";
+   font-size: 48px;
+   line-height: 78px;
+   font-weight: 500;
+   color: @black;
+
+   @media @tablet {
+      font-size: 40px;
+      line-height: 62px;
+   }
+
+   @media @mobile {
+      font-size: 35px;
+      line-height: 47px;
+   }
+}
+
+.text {
+   font-size: 18px;
+   line-height: 30px;
+
+   @media @mobile-sm {
+      font-size: 15px;
+      line-height: 25px;
+   }
+}
+
+
+/* Кнопка НАВЕРХ  */
+
+.pulse {
+   display: none;
+   position: fixed;
+   bottom: 1%;
+   right: 1%;
+   z-index: 15;
+   transform: translate(-50%, -50%);
+   width: 70px;
+   height: 70px;
+   background: @emerald;
+
+   border-radius: 50%;
+   text-align: center;
+   line-height: 70px;
+   font-size: 15px;
+   text-transform: uppercase;
+   font-weight: 600;
+   color: @white;
+
+   cursor: pointer;
+
+   @media @mobile {
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
+      font-size: 11px;
+   }
+
+
+   &::before,
+   &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      border: 50%;
+      border: 1px solid @emerald;
+      border-radius: 50%;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+      animation: animate 1.5s linear infinite;
+      backface-visibility: hidden;
+   }
+
+   &::after {
+      animation-delay: 0.5s;
+   }
+}
+
+
+@keyframes animate {
+   0% {
+      transform: scale(0.5);
+      opacity: 0;
+   }
+
+   50% {
+
+      opacity: 1;
+   }
+
+   100% {
+      transform: scale(1.2);
+      opacity: 0;
+   }
+}

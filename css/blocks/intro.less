@@ -1,0 +1,75 @@
+// main: ../style.less
+
+.intro {
+   margin: 100px 0 0 0;
+
+   @media @tablet {
+      margin: 50px 0 0 0;
+   }
+}
+
+.intro__inner {
+   display: flex;
+
+   @media @mobile {
+      flex-wrap: wrap;
+   }
+}
+
+.intro__content {
+   flex: 0 1 50%;
+   padding: 120px 20px 0 0;
+
+   @media @tablet {
+      padding: 50px 0 0 0;
+   }
+
+   @media @mobile {
+      flex: 0 1 100%;
+   }
+}
+
+.intro__subtitle {}
+
+.intro__title {
+   margin: 15px 0 0 0;
+}
+
+.intro__text {
+   margin: 25px 0 0 0;
+}
+
+.intro__btn {
+   margin: 45px 0 0 0;
+}
+
+.intro__picture-img {
+   flex: 0 1 50%;
+   padding: 0 0 0 50px;
+   text-align: right;
+
+   @media @mobile {
+      flex: 0 1 100%;
+      text-align: center;
+      padding: 0 0 0 25px;
+   }
+
+
+   & img {
+      max-width: 100%;
+      border-radius: 130px 0;
+      overflow: hidden;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      margin: 50px 0 0 0;
+
+      box-shadow: -25px -25px 0 0px @white,
+         -25px -25px 0 2px @border-color;
+
+      @media @mobile {
+         border-radius: 90px 0;
+         margin: 80px 0 0 0;
+      }
+   }
+}

@@ -1,0 +1,158 @@
+// main: ../style.less
+
+.header {
+   margin: 35px 0 0 0;
+
+
+}
+
+.header__inner {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+
+}
+
+.header__logo {
+
+   transition: 1s ease;
+
+   &:hover {
+      transform: scale(1.2);
+   }
+}
+
+.header__nav {
+   margin: 0 0 0 auto;
+   overflow: auto;
+
+   @media @tablet {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      background-color: @beige;
+
+      display: flex;
+      flex-direction: column;
+      padding: 30px 0 0 0;
+
+      transition: all 0.4s ease;
+
+      &.burger-active {
+         top: 0;
+      }
+   }
+}
+
+.header__nav-link {
+   margin: 0 25px 0 0;
+   display: inline-block;
+
+   font-size: 16px;
+   font-weight: 600;
+   color: @main-color;
+
+   transition: all 0.4s ease;
+
+   &:last-of-type {
+      margin-right: 40px;
+   }
+
+   &:hover {
+      opacity: 0.7;
+      transform: translateY(-5px);
+   }
+
+   @media @tablet {
+      margin: 15px auto 0;
+      color: @white;
+      font-size: 20px;
+
+      &:last-of-type {
+         margin: 10px auto 0;
+      }
+   }
+}
+
+.header__btn {
+   @media @tablet {
+      margin-left: auto;
+   }
+
+
+   @media @mobile {
+      position: absolute;
+      top: 100px;
+      left: 15px;
+      z-index: 5;
+   }
+
+}
+
+.header__burger {
+   @media @tablet {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 20px;
+      z-index: 10;
+      margin: 0 20px 0 50px;
+
+      &::before,
+      &::after {
+         content: '';
+         background-color: @emerald;
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         left: 0;
+
+         transition: all 0.4s ease;
+
+      }
+
+      &::before {
+         top: 0;
+      }
+
+      &::after {
+         bottom: 0;
+      }
+
+      & span {
+         background-color: @emerald;
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         left: 0;
+         top: 50%;
+         transform: translateY(-50%);
+
+         transition: all 0.4s ease;
+      }
+
+      &.burger-active::before {
+         transform: rotate(45deg);
+         top: 9px;
+      }
+
+      &.burger-active::after {
+         transform: rotate(-45deg);
+         bottom: 9px;
+      }
+
+      &.burger-active span {
+         transform: scale(0);
+
+      }
+   }
+
+   @media @mobile-sm {
+
+      margin: 0 10px 0 50px;
+   }
+}
